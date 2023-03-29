@@ -9,6 +9,7 @@ class App extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
+            orders: [],
             items: [
                 {
                     it: 1,
@@ -92,16 +93,21 @@ class App extends React.Component<any, any> {
                 },
             ]
         }
+        this.addToOrder = this.addToOrder.bind(this)
     }
 
     render() {
         return (
             <div className='wrapper'>
                 <Header/>
-                <Items items={this.state.items}/>
+                <Items items={this.state.items} onAdd={this.addToOrder}/>
                 <Footer/>
             </div>
         );
+    }
+
+    addToOrder(item: any){
+        this.setState({orders:[...this.state.orders, item]})
     }
 }
 
