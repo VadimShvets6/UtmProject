@@ -72,6 +72,17 @@ header .presentation::before{
     color: #fff;
 }
 
+header .shop-cart-button{
+    float: right;
+    cursor: pointer;
+    transition: color 500ms ease;
+}
+
+header .shop-cart-button:hover,
+header .shop-cart-button.active{
+    color: #dc3d3d;
+}
+
 main {
     display: flex;
     width: 100%;
